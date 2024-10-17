@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Maximum Element</title>
+</head>
+<body>
+
+    <h1>Find Maximum Element</h1>
+    
+    <label for="arrayInput">Enter numbers: </label>
+    <input type="text" id="arrayInput">
+    
+    <br><br>
+    
+    <button onclick="findMaxElement()">Find Maximum</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findMaxElement() {
+            const arrayInput = document.getElementById('arrayInput').value;
+            const arr = arrayInput.split(',').map(Number);
+            if (arr.length === 0) {
+                document.getElementById('result').innerText = 'Please enter some numbers!';
+                return;
+            }
+
+            let maxElement = arr[0]; 
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > maxElement) {
+                    maxElement = arr[i];  
+                }
+            }
+            document.getElementById('result').innerText = `Maximum Element: ${maxElement}`;
+        }
+    </script>
+
+</body>
+</html>
